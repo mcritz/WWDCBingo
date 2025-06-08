@@ -5,6 +5,11 @@ struct WebView {
     static func renderPage(_ bodyContent: Component) -> String {
         return HTML(head: [
             .meta(.charset(.utf8)),
+            .meta(.attribute(named: "og:title", value: "WWDC Bingo!")),
+            .meta(.attribute(named: "og:description", value: "Play along with WWDC")),
+            .meta(.attribute(named: "og:image", value: "https://wwdcbingo.com/social-preview.jpg")),
+            .meta(.attribute(named: "og:url", value: "https://wwdcbingo.com")),
+            .meta(.attribute(named: "og:type", value: "website")),
             .title("WWDC Bingo 2024!"),
             .link(.href("/style.css"), .rel(.stylesheet)),
             .meta(.attribute(named: "viewport", value: "width=device-width, initial-scale=1.0")),
@@ -26,8 +31,7 @@ struct WebView {
                 Header {
                     H1 {
                         Text("WWDC Bingo ")
-                        Span("It’s Glowtime!")
-                            .class("glow")
+                        Span("Sleek peek.")
                     }
                 }
                 Div {
